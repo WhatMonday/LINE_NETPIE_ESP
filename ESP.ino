@@ -40,7 +40,6 @@ void setup() {
   Serial.println(WiFi.localIP());
   microgear.init(KEY,SECRET,ALIAS);  /* Initial with KEY, SECRET and also set the ALIAS here */ 
   microgear.connect(APPID);   /* connect to NETPIE to a specific APPID */ 
-
 }
 void loop() {
     if (microgear.connected())
@@ -74,7 +73,6 @@ HTTPClient http;
   int found = 0;
   int strIndex[] = {0, -1};
   int maxIndex = data.length()-1;
-
   for(int i=0; i<=maxIndex && found<=index; i++){
     if(data.charAt(i)==separator || i==maxIndex){
         found++;
