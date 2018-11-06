@@ -11,9 +11,9 @@ WiFiClient client;
 MicroGear microgear(client);
 void onMsghandler(char *topic, uint8_t* msg, unsigned int msglen) {
   msg[msglen] = '\0'; 
-  String message = getValue((char *)msg, ',', 0);
-  String token = getValue((char *)msg, ',', 1);
-  Line_Reply(message,token);
+  String message = getValue((char *)msg, ',', 0);//You can do something then reply another message if you want.
+  String token = getValue((char *)msg, ',', 1); // This token must be keep for reply to LINE
+  Line_Reply(message,token); // Just for example reply same message. 
 }
 void onConnected(char *attribute, uint8_t* msg, unsigned int msglen) {
   Serial.println("Connected to NETPIE..."); /* Set the alias of this microgear ALIAS */ 
